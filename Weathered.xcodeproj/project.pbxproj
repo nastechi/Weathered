@@ -11,6 +11,12 @@
 		09A7A40928F56DD200305E28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A40828F56DD200305E28 /* ContentView.swift */; };
 		09A7A40B28F56DD400305E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A40A28F56DD400305E28 /* Assets.xcassets */; };
 		09A7A40E28F56DD400305E28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A40D28F56DD400305E28 /* Preview Assets.xcassets */; };
+		09A7A41828F56EEB00305E28 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A41528F56EEB00305E28 /* Inter-Light.ttf */; };
+		09A7A41928F56EEB00305E28 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A41628F56EEB00305E28 /* Inter-Bold.ttf */; };
+		09A7A41A28F56EEB00305E28 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A41728F56EEB00305E28 /* Inter-Regular.ttf */; };
+		09A7A41D28F56FE500305E28 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A41C28F56FE500305E28 /* Constants.swift */; };
+		09A7A42128F57B5000305E28 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A42028F57B5000305E28 /* WeatherViewModel.swift */; };
+		09A7A42328F57B5F00305E28 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A42228F57B5F00305E28 /* WeatherModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +25,13 @@
 		09A7A40828F56DD200305E28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		09A7A40A28F56DD400305E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A7A40D28F56DD400305E28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		09A7A41528F56EEB00305E28 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		09A7A41628F56EEB00305E28 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		09A7A41728F56EEB00305E28 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		09A7A41B28F56F1A00305E28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		09A7A41C28F56FE500305E28 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		09A7A42028F57B5000305E28 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		09A7A42228F57B5F00305E28 /* WeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +64,13 @@
 		09A7A40528F56DD200305E28 /* Weathered */ = {
 			isa = PBXGroup;
 			children = (
+				09A7A41B28F56F1A00305E28 /* Info.plist */,
+				09A7A41428F56EC600305E28 /* Fonts */,
 				09A7A40628F56DD200305E28 /* WeatheredApp.swift */,
 				09A7A40828F56DD200305E28 /* ContentView.swift */,
+				09A7A42028F57B5000305E28 /* WeatherViewModel.swift */,
+				09A7A42228F57B5F00305E28 /* WeatherModel.swift */,
+				09A7A41C28F56FE500305E28 /* Constants.swift */,
 				09A7A40A28F56DD400305E28 /* Assets.xcassets */,
 				09A7A40C28F56DD400305E28 /* Preview Content */,
 			);
@@ -65,6 +83,16 @@
 				09A7A40D28F56DD400305E28 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		09A7A41428F56EC600305E28 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				09A7A41628F56EEB00305E28 /* Inter-Bold.ttf */,
+				09A7A41528F56EEB00305E28 /* Inter-Light.ttf */,
+				09A7A41728F56EEB00305E28 /* Inter-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +154,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A7A40E28F56DD400305E28 /* Preview Assets.xcassets in Resources */,
+				09A7A41A28F56EEB00305E28 /* Inter-Regular.ttf in Resources */,
+				09A7A41828F56EEB00305E28 /* Inter-Light.ttf in Resources */,
+				09A7A41928F56EEB00305E28 /* Inter-Bold.ttf in Resources */,
 				09A7A40B28F56DD400305E28 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +168,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09A7A42128F57B5000305E28 /* WeatherViewModel.swift in Sources */,
 				09A7A40928F56DD200305E28 /* ContentView.swift in Sources */,
 				09A7A40728F56DD200305E28 /* WeatheredApp.swift in Sources */,
+				09A7A41D28F56FE500305E28 /* Constants.swift in Sources */,
+				09A7A42328F57B5F00305E28 /* WeatherModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +304,7 @@
 				DEVELOPMENT_TEAM = TDKY355Z53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weathered/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +334,7 @@
 				DEVELOPMENT_TEAM = TDKY355Z53;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Weathered/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
