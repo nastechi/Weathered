@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		091BB85728F5950300D8FD58 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 091BB85628F5950300D8FD58 /* Alamofire */; };
 		09A7A40728F56DD200305E28 /* WeatheredApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A40628F56DD200305E28 /* WeatheredApp.swift */; };
-		09A7A40928F56DD200305E28 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A40828F56DD200305E28 /* ContentView.swift */; };
+		09A7A40928F56DD200305E28 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09A7A40828F56DD200305E28 /* WeatherView.swift */; };
 		09A7A40B28F56DD400305E28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A40A28F56DD400305E28 /* Assets.xcassets */; };
 		09A7A40E28F56DD400305E28 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A40D28F56DD400305E28 /* Preview Assets.xcassets */; };
 		09A7A41828F56EEB00305E28 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 09A7A41528F56EEB00305E28 /* Inter-Light.ttf */; };
@@ -22,7 +23,7 @@
 /* Begin PBXFileReference section */
 		09A7A40328F56DD200305E28 /* Weathered.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weathered.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A7A40628F56DD200305E28 /* WeatheredApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatheredApp.swift; sourceTree = "<group>"; };
-		09A7A40828F56DD200305E28 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		09A7A40828F56DD200305E28 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		09A7A40A28F56DD400305E28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09A7A40D28F56DD400305E28 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		09A7A41528F56EEB00305E28 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
@@ -39,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091BB85728F5950300D8FD58 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,7 +69,7 @@
 				09A7A41B28F56F1A00305E28 /* Info.plist */,
 				09A7A41428F56EC600305E28 /* Fonts */,
 				09A7A40628F56DD200305E28 /* WeatheredApp.swift */,
-				09A7A40828F56DD200305E28 /* ContentView.swift */,
+				09A7A40828F56DD200305E28 /* WeatherView.swift */,
 				09A7A42028F57B5000305E28 /* WeatherViewModel.swift */,
 				09A7A42228F57B5F00305E28 /* WeatherModel.swift */,
 				09A7A41C28F56FE500305E28 /* Constants.swift */,
@@ -111,6 +113,9 @@
 			dependencies = (
 			);
 			name = Weathered;
+			packageProductDependencies = (
+				091BB85628F5950300D8FD58 /* Alamofire */,
+			);
 			productName = Weathered;
 			productReference = 09A7A40328F56DD200305E28 /* Weathered.app */;
 			productType = "com.apple.product-type.application";
@@ -139,6 +144,9 @@
 				Base,
 			);
 			mainGroup = 09A7A3FA28F56DD200305E28;
+			packageReferences = (
+				091BB85528F5950300D8FD58 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 09A7A40428F56DD200305E28 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,7 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09A7A42128F57B5000305E28 /* WeatherViewModel.swift in Sources */,
-				09A7A40928F56DD200305E28 /* ContentView.swift in Sources */,
+				09A7A40928F56DD200305E28 /* WeatherView.swift in Sources */,
 				09A7A40728F56DD200305E28 /* WeatheredApp.swift in Sources */,
 				09A7A41D28F56FE500305E28 /* Constants.swift in Sources */,
 				09A7A42328F57B5F00305E28 /* WeatherModel.swift in Sources */,
@@ -229,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -283,7 +291,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -310,6 +318,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +349,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,6 +385,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		091BB85528F5950300D8FD58 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		091BB85628F5950300D8FD58 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 091BB85528F5950300D8FD58 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 09A7A3FB28F56DD200305E28 /* Project object */;
 }

@@ -7,22 +7,28 @@
 
 import Foundation
 
-struct WeatherModel {
+struct WeatherModel: Decodable {
     let name: String
     let weather: [Weather]
     let main: Main
+    let wind: Wind
+    let sys: Sys
 }
 
-struct Weather {
+struct Weather: Decodable {
     let id: Int
     let description: String
 }
 
-struct Main {
+struct Main: Decodable {
     let temp: Double
     let feels_like: Double
 }
 
-struct wind {
+struct Wind: Decodable {
     let speed: Double
+}
+
+struct Sys: Decodable {
+    let sunset: Double
 }
