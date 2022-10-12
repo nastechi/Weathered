@@ -9,11 +9,30 @@ import Foundation
 import Alamofire
 
 class weatherViewModel: ObservableObject {
-    let apiKey = "92c842f410984ff20530d4efddcd0f54"
+    let apiKey = Keys.apiKey
     @Published var data: WeatherModel?
+    @Published var locationManager = LocationManager()
+    
+    var userLatitude: String {
+        return "\(locationManager.lastLocation?.coordinate.latitude ?? 0)"
+    }
+    
+    var userLongitude: String {
+        return "\(locationManager.lastLocation?.coordinate.longitude ?? 0)"
+    }
     
     func fetch(city: String) {
         let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=\(city)&appid=\(apiKey)"
+        let request = AF.request(url)
+        request.responseDecodable(of: WeatherModel.self) { response in
+            if let data = response.value {
+                self.data = data
+            }
+        }
+    }
+    
+    func fetch(lat: String, lon: String) {
+        let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&lat=\(lat)&lon=\(lon)&appid=\(apiKey)"
         let request = AF.request(url)
         request.responseDecodable(of: WeatherModel.self) { response in
             if let data = response.value {
@@ -45,7 +64,7 @@ class weatherViewModel: ObservableObject {
     func getSunsetTime() -> String {
         if let unixTime = data?.sys.sunset {
             let date = NSDate(timeIntervalSince1970: unixTime)
-            var time = "\(date)".split(separator: " ")[1]
+            let time = "\(date)".split(separator: " ")[1]
             return "\(time.dropLast().dropLast().dropLast())"
         }
         return ""

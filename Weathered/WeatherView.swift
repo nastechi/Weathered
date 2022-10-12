@@ -9,9 +9,8 @@ import SwiftUI
 
 struct WeatherView: View {
     @StateObject var viewModel = weatherViewModel()
-    @State var city = "Paris"
     @State var searchBar = ""
-    @State var wind = "4m/s"
+    
     var body: some View {
         ZStack {
             Color(K.Colors.background)
@@ -34,7 +33,7 @@ struct WeatherView: View {
                         .padding()
                     
                     Image(viewModel.getWeatherPicture())
-                        .padding(.vertical, 60)
+                    Spacer()
                     Text("\(Int(weather))°C")
                         .font(Font.custom(K.Fonts.light, size: 70))
                         .foregroundColor(Color(K.Colors.text))
@@ -55,8 +54,9 @@ struct WeatherView: View {
             .padding()
         }
         .onAppear {
-            viewModel.fetch(city: "Paris")
+            viewModel.fetch(lat: viewModel.userLatitude, lon: viewModel.userLongitude)
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
     }
 }
 
