@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeatherView: View {
-    @StateObject var viewModel = weatherViewModel()
+    @StateObject var viewModel = WeatherViewModel()
     @State var searchBar = ""
     
     var body: some View {
@@ -18,6 +18,11 @@ struct WeatherView: View {
             VStack {
                 HStack {
                     TextField("Search", text: $searchBar)
+                        .onSubmit {
+                            viewModel.fetch(city: searchBar)
+                            searchBar = ""
+                        }
+                        .submitLabel(.search)
                     Button {
                         viewModel.fetch(city: searchBar)
                         searchBar = ""
@@ -26,30 +31,29 @@ struct WeatherView: View {
                     }
                 }
                 .foregroundColor(Color(K.Colors.text))
-                if let cityName = viewModel.data?.name, let weather = viewModel.data?.main.temp, let description = viewModel.data?.weather[0].description, let wind = viewModel.data?.wind.speed, let feelsLike = viewModel.data?.main.feels_like {
-                    Text(cityName)
-                        .font(Font.custom(K.Fonts.bold, size: 26))
-                        .foregroundColor(Color(K.Colors.text))
-                        .padding()
-                    
-                    Image(viewModel.getWeatherPicture())
-                    Spacer()
-                    Text("\(Int(weather))°C")
-                        .font(Font.custom(K.Fonts.light, size: 70))
-                        .foregroundColor(Color(K.Colors.text))
-                    Text(description)
-                        .font(Font.custom(K.Fonts.light, size: 16))
-                        .foregroundColor(Color(K.Colors.accent))
-                    Spacer()
-                    
-                    HStack {
-                        BottomInfoView(name: "Wind", data: "\(Int(wind))m/s")
-                        LineView()
-                        BottomInfoView(name: "Feels Like", data: "\(Int(feelsLike))")
-                        LineView()
-                        BottomInfoView(name: "Sunset", data: viewModel.getSunsetTime())
-                    }
+                Text(viewModel.data?.name ?? "")
+                    .font(Font.custom(K.Fonts.bold, size: 26))
+                    .foregroundColor(Color(K.Colors.text))
+                    .padding()
+                
+                Image(viewModel.getWeatherPicture())
+                Spacer()
+                Text("\(Int(viewModel.data?.main.temp ?? 0))°C")
+                    .font(Font.custom(K.Fonts.light, size: 70))
+                    .foregroundColor(Color(K.Colors.text))
+                Text(viewModel.data?.weather[0].description ?? "")
+                    .font(Font.custom(K.Fonts.light, size: 16))
+                    .foregroundColor(Color(K.Colors.accent))
+                Spacer()
+                
+                HStack {
+                    BottomInfoView(name: "Wind", data: "\(Int(viewModel.data?.wind.speed ?? 0))m/s")
+                    LineView()
+                    BottomInfoView(name: "Feels Like", data: "\(Int(viewModel.data?.main.feels_like ?? 0))")
+                    LineView()
+                    BottomInfoView(name: "Sunset", data: viewModel.getSunsetTime())
                 }
+                
             }
             .padding()
         }

@@ -7,8 +7,10 @@
 
 import Foundation
 import Alamofire
+import UIKit
+import SwiftUI
 
-class weatherViewModel: ObservableObject {
+class WeatherViewModel: ObservableObject {
     let apiKey = Keys.apiKey
     @Published var data: WeatherModel?
     @Published var locationManager = LocationManager()
