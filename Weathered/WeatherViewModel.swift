@@ -24,7 +24,8 @@ class WeatherViewModel: ObservableObject {
     }
     
     func fetch(city: String) {
-        let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=\(city)&appid=\(apiKey)"
+        let cityJoined = city.split(separator: " ").joined(separator: "%20")
+        let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=\(cityJoined)&appid=\(apiKey)"
         let request = AF.request(url)
         request.responseDecodable(of: WeatherModel.self) { response in
             if let data = response.value {
@@ -64,7 +65,8 @@ class WeatherViewModel: ObservableObject {
     }
     
     func getSunsetTime() -> String {
-        if let unixTime = data?.sys.sunset {
+        if var unixTime = data?.sys.sunset, let timezone = data?.timezone {
+            unixTime += timezone
             let date = NSDate(timeIntervalSince1970: unixTime)
             let time = "\(date)".split(separator: " ")[1]
             return "\(time.dropLast().dropLast().dropLast())"

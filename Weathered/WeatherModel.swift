@@ -13,6 +13,7 @@ struct WeatherModel: Decodable {
     let main: Main
     let wind: Wind
     let sys: Sys
+    let timezone: Double
 }
 
 struct Weather: Decodable {

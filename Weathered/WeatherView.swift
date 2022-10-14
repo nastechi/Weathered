@@ -22,6 +22,7 @@ struct WeatherView: View {
                             viewModel.fetch(city: searchBar)
                             searchBar = ""
                         }
+                        .disableAutocorrection(true)
                         .submitLabel(.search)
                     Button {
                         viewModel.fetch(city: searchBar)
@@ -49,7 +50,7 @@ struct WeatherView: View {
                 HStack {
                     BottomInfoView(name: "Wind", data: "\(Int(viewModel.data?.wind.speed ?? 0))m/s")
                     LineView()
-                    BottomInfoView(name: "Feels Like", data: "\(Int(viewModel.data?.main.feels_like ?? 0))")
+                    BottomInfoView(name: "Feels Like", data: "\(Int(viewModel.data?.main.feels_like ?? 0))°C")
                     LineView()
                     BottomInfoView(name: "Sunset", data: viewModel.getSunsetTime())
                 }
